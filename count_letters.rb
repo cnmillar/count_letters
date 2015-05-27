@@ -17,9 +17,7 @@ puts count_letters("This is a string").inspect
 def letter_indices(string)
 	letters = Hash.new { |h,k| h[k] = [] } # Why did I need to do this?
 	(0..string.length).each do |i|
-		if string[i] != " "
-			letters[string[i]] << i
-		end
+		letters[string[i]] << i if string[i] != " "
 	end
 	letters
 end
